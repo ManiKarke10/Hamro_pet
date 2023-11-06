@@ -5,6 +5,9 @@ export default {
   token(state) {
     return state.token;
   },
+  role(state) {
+    return state.role;
+  },
   admins(state) {
     return state.admins;
   },
@@ -13,9 +16,7 @@ export default {
   },
   isAdmin(_, getters, _2, rootGetters) {
     const admins = getters.admins;
-    console.log(admins);
     const userId = rootGetters.userId;
-    console.log(userId);
 
     return admins.some((admin) => admin.userId === userId);
   },

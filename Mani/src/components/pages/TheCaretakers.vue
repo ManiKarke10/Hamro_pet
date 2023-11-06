@@ -10,19 +10,15 @@
         </p>
       </div>
       <div class="right">
-        <button
-          type="button"
+        <button type="button"
           class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-          @click="loadCaretakers()"
-        >
+          @click="loadCaretakers()">
           Refresh
         </button>
         <router-link to="requests">
-          <button
-            type="button"
+          <button type="button"
             class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-            v-if="isCaretaker"
-          >
+            v-if="isCaretaker">
             My Messages
           </button>
         </router-link>
@@ -37,17 +33,9 @@
 
     <div class="container">
       <div class="item">
-        <caretaker-details
-          v-for="people in availableCaretakers"
-          :key="people.profileId"
-          :id="people.profileId"
-          :imageUrl="people.profileImageUrl"
-          :Name="people.name"
-          :speciality="people.speciality"
-          :rate="people.rate"
-          :location="people.location"
-          :bio="people.bio"
-        ></caretaker-details>
+        <caretaker-details v-for="people in availableCaretakers" :key="people.profileId" :id="people.profileId"
+          :imageUrl="people.profileImageUrl" :Name="people.name" :speciality="people.speciality" :rate="people.rate"
+          :location="people.location" :bio="people.bio"></caretaker-details>
       </div>
     </div>
   </base-card>
@@ -111,19 +99,18 @@ export default {
 .split-half {
   overflow: hidden;
 }
+
 .left {
   float: left;
 }
+
 .right {
   float: right;
 }
-.container {
-  display: flex;
-  flex-wrap: wrap;
-}
 
 .item {
-  flex-basis: 33.33%;
-  width: 33.33%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 </style>

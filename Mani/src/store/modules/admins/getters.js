@@ -6,7 +6,6 @@ export default {
     return state.profiles;
   },
   getCounts(state) {
-    console.log(state.counts);
     return state.counts;
   },
   getMonths(state) {

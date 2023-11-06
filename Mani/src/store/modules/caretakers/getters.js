@@ -8,8 +8,9 @@ export default {
   isCaretaker(_, getters, _2, rootGetters) {
     const caretakers = getters.caretakers;
     const userId = rootGetters.userId;
-
-    return caretakers.some((caretaker) => caretaker.userId === userId);
+    const userRole = rootGetters.role;
+    console.log(userRole, 'userRole');
+    return userRole === "caretaker" ? true : false;
   },
 
   myProfile(state) {

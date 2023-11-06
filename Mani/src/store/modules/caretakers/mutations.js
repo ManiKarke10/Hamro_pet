@@ -8,4 +8,8 @@ export default {
   setProfile(state, payload) {
     state.profile = payload;
   },
+  removeInitial(state) {
+    state.caretakers = [];
+    state.profile = null;
+  }
 };

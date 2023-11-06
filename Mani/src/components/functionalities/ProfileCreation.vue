@@ -1,15 +1,9 @@
 <template>
-  <form @submit.prevent="submitForm" enctype="multipart/form-data">
+  <form @submit="submitForm" enctype="multipart/form-data">
     <div class="profile-image">
       <div class="form-control">
         <label for="profilePic">Upload Your Picture</label>
-        <input
-          type="file"
-          id="profilePic"
-          name="profilePic"
-          accept="image/*"
-          @change="uploadFile"
-        />
+        <input type="file" id="profilePic" name="profilePic" accept="image/*" @change="uploadFile" />
       </div>
     </div>
     <div class="profile-details">
@@ -50,7 +44,9 @@
         <input type="text" id="location" v-model.trim="location" />
       </div>
     </div>
-    <button>Submit</button>
+    <button
+      class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-gray-900 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-700">
+      Submit</button>
   </form>
 </template>
 
@@ -88,7 +84,6 @@ export default {
     },
     uploadFile(event) {
       this.profileImageUrl = event.target.files[0];
-      console.log(this.profileImageUrl);
     },
   },
 };
@@ -97,6 +92,7 @@ export default {
 <style lang="scss" scoped>
 .form-control {
   text-align: left;
+
   input,
   select,
   textarea {

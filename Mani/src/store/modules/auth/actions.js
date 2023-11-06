@@ -12,23 +12,23 @@ export default {
       response = await axios.post("http://localhost:5000/api/v1/auth/login", {
         ...loginData,
       });
+      const responseData = await response.data;
+      console.log(responseData, 'Login paxi ko data');
+      const userId = responseData.userdetails.id;
+
+      localStorage.setItem("token", responseData.token);
+      localStorage.setItem("userId", userId);
+      localStorage.setItem("role", responseData.userdetails.role);
+
+      context.commit("setUser", {
+        token: responseData.token,
+        userId: userId,
+        role: responseData.userdetails.role,
+      });
+      router.push("/");
     } catch (error) {
       context.rootState.error = error.response.data.message;
     }
-
-    const responseData = await response.data;
-    if (!responseData) {
-    }
-    const userId = responseData.userdetails.id;
-
-    localStorage.setItem("token", responseData.token);
-    localStorage.setItem("userId", userId);
-
-    context.commit("setUser", {
-      token: responseData.token,
-      userId: userId,
-    });
-    router.push("/");
   },
 
   async signup(context, payload) {
@@ -38,6 +38,7 @@ export default {
       password: payload.password,
       role: payload.role,
     };
+    console.log(registrationData, 'registrationData');
     let response = "";
     try {
       response = await axios.post(
@@ -46,38 +47,46 @@ export default {
           ...registrationData,
         }
       );
+      const responseData = await response.data;
+
+      const userId = responseData.user._id;
+      context.commit("setUser", {
+        token: responseData.token,
+        userId: userId,
+        role: responseData.user.role,
+      });
+      router.push("/");
     } catch (error) {
       context.rootState.error = error.response.data.message;
     }
 
-    const responseData = await response.data;
-
-    const userId = responseData.user._id;
-    console.log(userId);
-    context.commit("setUser", {
-      token: responseData.token,
-      userId: userId,
-    });
-    router.push("/");
   },
   tryLogin(context) {
     const token = localStorage.getItem("token");
     const userId = localStorage.getItem("userId");
+    const role = localStorage.getItem("role")
 
-    if (token && userId) {
+    if (token && userId && role) {
       context.commit("setUser", {
         token: token,
         userId: userId,
+        role: role,
       });
     }
   },
   logout(context) {
     localStorage.removeItem("token");
     localStorage.removeItem("userId");
+    localStorage.removeItem("role");
 
     context.commit("setUser", {
       token: null,
       userId: null,
+      role: null,
+    });
+    context.commit("caretakers/removeInitial", {
+      caretakers: [],
+      profile: null,
     });
   },
   async getAdmins(context) {
@@ -87,22 +96,20 @@ export default {
       response = await axios.get("http://localhost:5000/api/v1/admins", {
         headers: { Authorization: "Bearer " + token },
       });
+      const responseData = await response.data.admins;
+      const admins = [];
+      for (const key in responseData) {
+        const admin = {
+          userId: responseData[key].userId,
+          name: responseData[key].name,
+          username: responseData[key].username,
+          email: responseData[key].email,
+        };
+        admins.push(admin);
+      }
+      context.commit("setAdmin", admins);
     } catch (error) {
       context.rootState.error = error.response.data.message.message;
     }
-    const responseData = await response.data.admins;
-
-    const admins = [];
-    console.log(responseData);
-    for (const key in responseData) {
-      const admin = {
-        userId: responseData[key].userID,
-        name: responseData[key].name,
-        username: responseData[key].username,
-        email: responseData[key].email,
-      };
-      admins.push(admin);
-    }
-    context.commit("setAdmin", admins);
   },
 };
