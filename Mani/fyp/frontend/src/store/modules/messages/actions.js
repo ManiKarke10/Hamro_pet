@@ -11,7 +11,7 @@ export default {
     let response = "";
     try {
       response = await axios.post(
-        `http://localhost:5000/api/v1/messages/${caretakerId}`,
+        `http://localhost:8080/api/v1/messages/${caretakerId}`,
         {
           ...messageData,
         },
@@ -33,7 +33,7 @@ export default {
     let response = "";
     try {
       response = await axios.get(
-        "http://localhost:5000/api/v1/messages/myhistory",
+        "http://localhost:8080/api/v1/messages/myhistory",
         {
           headers: { Authorization: "Bearer " + token },
         }

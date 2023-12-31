@@ -3,7 +3,7 @@
     <div id="adoptionpost">
       <header>
         <img
-          :src="`http://localhost:5000/profiles/${posterImageUrl}`"
+          :src="`http://localhost:8080/profiles/${posterImageUrl}`"
           alt="profilepic"
           class="posterImage"
         />
@@ -20,7 +20,7 @@
 
       <div class="postImageDiv">
         <img
-          :src="`http://localhost:5000/uploads/${postImageUrl}`"
+          :src="`http://localhost:8080/uploads/${postImageUrl}`"
           alt="PostImageHere"
         />
       </div>

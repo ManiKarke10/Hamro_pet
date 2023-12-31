@@ -1,7 +1,7 @@
 <template>
   <div class="w-96 mt-20 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
     <div class="flex flex-col items-center mt-10 pb-8">
-      <img class="w-24 h-24 mb-3 rounded-full shadow-lg" :src="`http://localhost:5000/profiles/${imageUrl}`"
+      <img class="w-24 h-24 mb-3 rounded-full shadow-lg" :src="`http://localhost:8080/profiles/${imageUrl}`"
         alt="Profile Picture" />
       <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">
         {{ Name }}

@@ -3,7 +3,7 @@
     <div class="profile-container">
       <div class="profile-image">
         <img
-          :src="`http://localhost:5000/profiles/${imageUrl}`"
+          :src="`http://localhost:8080/profiles/${imageUrl}`"
           alt="Image Here"
         />
       </div>
