@@ -15,7 +15,7 @@ export default {
     let response = "";
     try {
       response = await axios.post(
-        `http://localhost:8080/api/v1/services/${caretakerId}`,
+        `https://hamro-pet.onrender.com/api/v1/services/${caretakerId}`,
         {
           ...newRequest,
         },
@@ -35,7 +35,7 @@ export default {
 
     let response = "";
     try {
-      response = await axios.get("http://localhost:8080/api/v1/services", {
+      response = await axios.get("https://hamro-pet.onrender.com/api/v1/services", {
         headers: { Authorization: "Bearer " + token },
       });
       const responseData = await response.data;
@@ -66,7 +66,7 @@ export default {
     let response = "";
     try {
       response = await axios.get(
-        "http://localhost:8080/api/v1/services/acceptedrequests",
+        "https://hamro-pet.onrender.com/api/v1/services/acceptedrequests",
         {
           headers: { Authorization: "Bearer " + token },
         }
@@ -99,7 +99,7 @@ export default {
     let response = "";
     try {
       response = await axios.get(
-        "http://localhost:8080/api/v1/services/rejectedrequests",
+        "https://hamro-pet.onrender.com/api/v1/services/rejectedrequests",
         {
           headers: { Authorization: "Bearer " + token },
         }
@@ -136,7 +136,7 @@ export default {
     //auto hatxa ani
 
     /* const response = await axios.patch(
-      `http://localhost:8080/api/v1/services/${serviceId}/reject`,
+      `https://hamro-pet.onrender.com/api/v1/services/${serviceId}/reject`,
       {
         headers: { Authorization: "Bearer " + token },
       }
@@ -145,7 +145,7 @@ export default {
     try {
       response = await axios({
         method: "patch",
-        url: `http://localhost:8080/api/v1/services/${serviceId}/reject`,
+        url: `https://hamro-pet.onrender.com/api/v1/services/${serviceId}/reject`,
         headers: { Authorization: "Bearer " + token },
       });
       let requests = context.state.requests;
@@ -179,7 +179,7 @@ export default {
     const serviceId = payload.id;
 
     /* const response = await axios.patch(
-      `http://localhost:8080/api/v1/services/${serviceId}/accept`,
+      `https://hamro-pet.onrender.com/api/v1/services/${serviceId}/accept`,
       {
         headers: { Authorization: "Bearer " + token },
       }
@@ -188,7 +188,7 @@ export default {
     try {
       response = await axios({
         method: "patch",
-        url: `http://localhost:8080/api/v1/services/${serviceId}/accept`,
+        url: `https://hamro-pet.onrender.com/api/v1/services/${serviceId}/accept`,
         headers: { Authorization: "Bearer " + token },
       });
       let requests = context.state.requests;

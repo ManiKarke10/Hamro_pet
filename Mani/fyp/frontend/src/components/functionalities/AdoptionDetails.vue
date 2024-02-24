@@ -3,7 +3,7 @@
     <div id="adoptionpost">
       <header>
         <img
-          :src="`http://localhost:8080/profiles/${posterImageUrl}`"
+          :src="`https://hamro-pet.onrender.com/profiles/${posterImageUrl}`"
           alt="profilepic"
           class="posterImage"
         />
@@ -20,7 +20,7 @@
 
       <div class="postImageDiv">
         <img
-          :src="`http://localhost:8080/uploads/${postImageUrl}`"
+          :src="`https://hamro-pet.onrender.com/uploads/${postImageUrl}`"
           alt="PostImageHere"
         />
       </div>

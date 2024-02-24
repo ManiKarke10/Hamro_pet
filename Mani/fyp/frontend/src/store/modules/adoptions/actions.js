@@ -5,7 +5,7 @@ export default {
     const token = context.rootGetters.token;
     let response = "";
     try {
-      response = await axios.get("http://localhost:8080/api/v1/adoptions", {
+      response = await axios.get("https://hamro-pet.onrender.com/api/v1/adoptions", {
         headers: { Authorization: "Bearer " + token },
       });
       const responseData = await response.data.posts;
@@ -33,7 +33,7 @@ export default {
     let response = "";
     try {
       response = await axios.get(
-        "http://localhost:8080/api/v1/adoptions/myposts?auth=",
+        "https://hamro-pet.onrender.com/api/v1/adoptions/myposts?auth=",
         {
           headers: { Authorization: "Bearer " + token },
         }
@@ -68,7 +68,7 @@ export default {
     let response = "";
     try {
       response = await axios.post(
-        " http://localhost:8080/api/v1/adoptions",
+        " https://hamro-pet.onrender.com/api/v1/adoptions",
         postData,
         {
           headers: {

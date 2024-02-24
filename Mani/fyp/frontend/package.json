@@ -1,5 +1,5 @@
 {
-  "proxy":"http://localhost:8080",
+  "proxy":"https://hamro-pet.onrender.com",
   "name": "vite-fyp",
   "private": true,
   "version": "0.0.0",

@@ -3,7 +3,7 @@
     <div class="profile-container">
       <div class="profile-image">
         <img
-          :src="`http://localhost:8080/profiles/${imageUrl}`"
+          :src="`https://hamro-pet.onrender.com/profiles/${imageUrl}`"
           alt="Image Here"
         />
       </div>
