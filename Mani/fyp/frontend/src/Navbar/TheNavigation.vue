@@ -4,7 +4,7 @@
       class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
     >
       <router-link to="/" class="flex items-center">
-        <img src="src\assets\logo.png" class="h-20 w-100 mr-5" alt="Hamropets Logo" />
+        <img src="..\assets\logo.png" class="h-20 w-100 mr-5" alt="Hamropets Logo" />
       </router-link>
       <button
         data-collapse-toggle="navbar-default"
