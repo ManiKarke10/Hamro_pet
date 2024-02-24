@@ -10,7 +10,7 @@
         <!-- Item 1 -->
         <div class="hidden duration-700 ease-in-out h-500" data-carousel-item>
           <img
-            src="src/assets/cat.jpg"
+            src="../../assets/cat.jpg"
             class="absolute block w-full h-full object-fit-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
             alt="..."
           />
@@ -18,7 +18,7 @@
         <!-- Item 2 -->
         <div class="hidden duration-700 ease-in-out h-500" data-carousel-item>
           <img
-            src="src/assets/dog2.jpg"
+            src="../../assets/dog2.jpg"
             class="absolute block w-full h-full object-fit-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
             alt="..."
           />
@@ -26,7 +26,7 @@
         <!-- Item 3 -->
         <div class="hidden duration-700 ease-in-out h-500" data-carousel-item>
           <img
-            src="src/assets/fish.jpg"
+            src="../../assets/fish.jpg"
             class="absolute block w-full h-full object-fit-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
             alt="..."
           />
@@ -34,7 +34,7 @@
         <!-- Item 4 -->
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
           <img
-            src="src/assets/dogs.jpg"
+            src="../../assets/dogs.jpg"
             class="absolute block w-full h-full object-fit-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
             alt="..."
           />
@@ -42,7 +42,7 @@
         <!-- Item 5 -->
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
           <img
-            src="src/assets/cat2.jpeg"
+            src="../../assets/cat2.jpeg"
             class="absolute block w-full h-full object-fit-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
             alt="..."
           />
