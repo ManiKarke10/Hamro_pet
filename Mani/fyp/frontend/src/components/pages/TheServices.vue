@@ -195,7 +195,7 @@ export default {
       this.$store.dispatch("caretakers/loadCaretakers");
     },
     sendRequest(receiversDetails) {
-     /* this.receiversId = receiversDetails.id;
+    this.receiversId = receiversDetails.id;
       const requestDetails = {
         receiversId: this.receiversId,
         serviceType: this.serviceValue,
@@ -204,13 +204,13 @@ export default {
         dropOffDate: this.dropOffDate,
       };
 
-      this.$store.dispatch("requests/contactCaretaker", requestDetails);*/
+      this.$store.dispatch("requests/contactCaretaker", requestDetails);
       var path = "https://uat.esewa.com.np/epay/main";
       var params = {
-      amt: totalPrice(),
+      amt: totalPrice(5000),
       psc: 0,
       pdc: 0,
-      txAmt: 0,
+      txAmt: 200,
       tAmt: totalPrice(),
       pid: "ee2c3ca1adfkj-696b-4cc5-lkjlk",
       scd: "EPAYTEST",

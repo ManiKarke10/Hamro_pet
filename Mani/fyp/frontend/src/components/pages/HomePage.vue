@@ -15,6 +15,6 @@ export default {
 
 <style scoped>
 .align-items {
-  height: 500px;
+  height: 650px;
 }
-</style>
+</style> 

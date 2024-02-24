@@ -149,8 +149,8 @@
 export default {};
 </script>
 
-<style>
+<style scoped>
 .height-manage {
-  height: 500px;
+  height: 100%;
 }
 </style>

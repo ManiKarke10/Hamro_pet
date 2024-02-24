@@ -11,7 +11,7 @@
           @click.prevent="dismissError"
           aria-label="Dismiss Success"
         >
-          Dismiss
+          Approved
         </button>
       </div>
     </div>
