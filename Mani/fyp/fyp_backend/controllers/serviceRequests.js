@@ -1,3 +1,4 @@
+const axios = require("axios");
 require("dotenv").config();
 const nodemailer = require("nodemailer");
 const Profile = require("../model/Profile");
@@ -224,7 +225,9 @@ const rejectedRequests = async (req, res) => {
 
 //make payment via khalti
 const khaltipayment = async (req, res) => {
+  console.log('cadada');
   const payload = req.body;
+  console.log('this is play',payload);
   const khaltiResponse = await axios.post(
     "https://a.khalti.com/api/v2/epayment/initiate/",
     payload,
@@ -234,7 +237,7 @@ const khaltipayment = async (req, res) => {
       },
     }
   );
-
+console.log('ada',khaltiResponse);
   if (khaltiResponse) {
     res.json({
       success: true,
@@ -246,6 +249,7 @@ const khaltipayment = async (req, res) => {
       message: "something went wrong",
     });
   }
+  console.log('sdad');
 };
 
 module.exports = {

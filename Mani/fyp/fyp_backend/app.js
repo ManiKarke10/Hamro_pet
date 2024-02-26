@@ -1,7 +1,7 @@
 require("dotenv").config();
 require("express-async-errors");   
 const express = require("express");
-
+const axios = require("axios");
 
 //for security, using helmet package
 const helmet = require("helmet");

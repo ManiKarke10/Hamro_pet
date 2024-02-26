@@ -10,12 +10,12 @@ const {
   rejectedRequests,
   khaltipayment,
 } = require("../controllers/serviceRequests");
-
+router.route("/khaltiapi").post(khaltipayment);
 router.route("/:id").post(requestService);
 router.route("/").get(myRequests);
 router.route("/:id/accept").patch(acceptRequest);
 router.route("/:id/reject").patch(rejectRequest);
 router.route("/acceptedrequests").get(acceptedRequests);
 router.route("/rejectedrequests").get(rejectedRequests);
-router.route("/khalti-api").post(khaltipayment);
+router.post("/khaltiapi",khaltipayment);
 module.exports = router;
