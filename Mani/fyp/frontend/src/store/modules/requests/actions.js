@@ -43,8 +43,7 @@ export default {
 
     // Handle payment response as needed
     console.log('Payment Response:', paymentResponse.data.data.payment_url);
-    window.open(paymentResponse.data.data.payment_url);
-    window.close();
+    window.location.href= paymentResponse.data.data.payment_url;
     } 
     
     catch (error) {
