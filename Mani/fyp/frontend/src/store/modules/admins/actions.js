@@ -6,7 +6,7 @@ export default {
     const token = context.rootGetters.token;
     let response = "";
     try {
-      response = await axios.get("http://localhost:8080/api/v1/admins/users", {
+      response = await axios.get("https://hamro-pet.onrender.com/api/v1/admins/users", {
         headers: { Authorization: "Bearer " + token },
       });
       const responseData = await response.data.users;
@@ -34,7 +34,7 @@ export default {
     try {
       response = await axios({
         method: "patch",
-        url: `http://localhost:8080/api/v1/admins/${userId}/deleteuser`,
+        url: `https://hamro-pet.onrender.com/api/v1/admins/${userId}/deleteuser`,
         headers: { Authorization: "Bearer " + token },
       });
       let users = context.state.users;
@@ -49,7 +49,7 @@ export default {
   /* async loadAllProfiles(context) {
     const token = context.rootGetters.token;
     const response = await axios.get(
-      "http://localhost:8080/api/v1/admins/profiles",
+      "https://hamro-pet.onrender.com/api/v1/admins/profiles",
       {
         headers: { Authorization: "Bearer " + token },
       }
@@ -63,7 +63,7 @@ export default {
     let response = "";
     try {
       response = await axios.get(
-        "http://localhost:8080/api/v1/admins/profiles",
+        "https://hamro-pet.onrender.com/api/v1/admins/profiles",
         {
           headers: { Authorization: "Bearer " + token },
         }
@@ -99,7 +99,7 @@ export default {
     try {
       response = await axios({
         method: "patch",
-        url: `http://localhost:8080/api/v1/admins/profiles/${profileId}/verifyprofile`,
+        url: `https://hamro-pet.onrender.com/api/v1/admins/profiles/${profileId}/verifyprofile`,
         headers: { Authorization: "Bearer " + token },
       });
       context.rootState.success = "Profile Verified";
@@ -113,7 +113,7 @@ export default {
     const token = context.rootGetters.token;
     let response = "";
     try {
-      response = await axios.get("http://localhost:8080/api/v1/admins/counts", {
+      response = await axios.get("https://hamro-pet.onrender.com/api/v1/admins/counts", {
         headers: { Authorization: "Bearer " + token },
       });
       const responseData = response.data.counts;

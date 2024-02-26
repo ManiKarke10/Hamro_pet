@@ -19,7 +19,7 @@ export default {
     let response = "";
     try {
       response = await axios.post(
-        "http://localhost:8080/api/v1/profiles",
+        "https://hamro-pet.onrender.com/api/v1/profiles",
         {
           ...caretakersData,
         },
@@ -43,7 +43,7 @@ export default {
     let response = "";
     try {
       response = await axios.get(
-        "http://localhost:8080/api/v1/profiles/caretakers",
+        "https://hamro-pet.onrender.com/api/v1/profiles/caretakers",
         {
           headers: { Authorization: "Bearer " + token },
         }
@@ -79,7 +79,7 @@ export default {
     const token = context.rootGetters.token;
     let response = "";
     try {
-      response = await axios.get("http://localhost:8080/api/v1/profiles", {
+      response = await axios.get("https://hamro-pet.onrender.com/api/v1/profiles", {
         headers: { Authorization: "Bearer " + token },
       });
       const responseData = await response.data;
@@ -117,7 +117,7 @@ export default {
     let response = "";
     try {
       response = await axios.patch(
-        "http://localhost:8080/api/v1/profiles/applyverification",
+        "https://hamro-pet.onrender.com/api/v1/profiles/applyverification",
         {
           ...verificationDetails,
         },
@@ -154,7 +154,7 @@ export default {
 
     /* const response = await axios({
       method: "patch",
-      url: "http://localhost:8080/api/v1/profiles/updateMyProfile",
+      url: "https://hamro-pet.onrender.com/api/v1/profiles/updateMyProfile",
       headers: {
         Authorization: "Bearer " + token,
         "Content-Type": "multipart/form-data",
@@ -163,7 +163,7 @@ export default {
     let response = "";
     try {
       response = await axios.patch(
-        "http://localhost:8080/api/v1/profiles/updateMyProfile",
+        "https://hamro-pet.onrender.com/api/v1/profiles/updateMyProfile",
         {
           ...profileData,
         },
