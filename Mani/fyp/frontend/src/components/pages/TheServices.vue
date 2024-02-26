@@ -195,9 +195,11 @@ export default {
       this.$store.dispatch("caretakers/loadCaretakers");
     },
     sendRequest(receiversDetails) {
+    console.log('das',receiversDetails.rate);
     this.receiversId = receiversDetails.id;
       const requestDetails = {
         receiversId: this.receiversId,
+        rate: receiversDetails.rate * 100,
         serviceType: this.serviceValue,
         serviceOf: this.pet,
         pickUpDate: this.pickUpDate,
@@ -205,33 +207,6 @@ export default {
       };
 
       this.$store.dispatch("requests/contactCaretaker", requestDetails);
-      var path = "https://uat.esewa.com.np/epay/main";
-      var params = {
-      amt: totalPrice(5000),
-      psc: 0,
-      pdc: 0,
-      txAmt: 200,
-      tAmt: totalPrice(),
-      pid: "ee2c3ca1adfkj-696b-4cc5-lkjlk",
-      scd: "EPAYTEST",
-      su: "http://localhost:3000/users/esewa_payment_success",
-      fu: "http://localhost:3000/users/esewa_payment_failed",
-    };
-    console.log(params);
-    var form = document.createElement("form");
-    form.setAttribute("method", "POST");
-    form.setAttribute("action", path);
-
-    for (var key in params) {
-      var hiddenField = document.createElement("input");
-      hiddenField.setAttribute("type", "hidden");
-      hiddenField.setAttribute("name", key);
-      hiddenField.setAttribute("value", params[key]);
-      form.appendChild(hiddenField);
-    }
-
-    document.body.appendChild(form);
-    form.submit();
     },
     handleSearch() {
       if (this.location !== "") {
