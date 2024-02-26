@@ -222,6 +222,32 @@ const rejectedRequests = async (req, res) => {
   }
 };
 
+//make payment via khalti
+const khaltipayment = async (req, res) => {
+  const payload = req.body;
+  const khaltiResponse = await axios.post(
+    "https://a.khalti.com/api/v2/epayment/initiate/",
+    payload,
+    {
+      headers: {
+        Authorization: "Key a71a0bd496234925929c41ee99d59257",
+      },
+    }
+  );
+
+  if (khaltiResponse) {
+    res.json({
+      success: true,
+      data: khaltiResponse?.data,
+    });
+  } else {
+    res.json({
+      success: false,
+      message: "something went wrong",
+    });
+  }
+};
+
 module.exports = {
   requestService,
   myRequests,
@@ -229,4 +255,5 @@ module.exports = {
   rejectRequest,
   acceptedRequests,
   rejectedRequests,
+  khaltipayment,
 };
